@@ -2,8 +2,8 @@
 <%= link_to 'New Journal Entry', new_entry_path %> |
 <%= link_to 'New Category', new_category_path %>
 
-<div class="entry">
-  <% @entries.each do |entry| %>
+<% @entries.each do |entry| %>
+  <div class="entry">
     <h3><%= entry.title %></h3><br/>
       <%= entry.content %><br/>
       <span class="category">Categories:
@@ -16,5 +16,5 @@
         <%= link_to 'Show', entry_path(entry) %> | <%= link_to 'Edit', edit_entry_path(entry) %> |
         <%= link_to 'Destroy', entry_path(entry), method: :delete %>
       </div>
-  <% end %>
-</div>
+  </div>
+<% end %>
