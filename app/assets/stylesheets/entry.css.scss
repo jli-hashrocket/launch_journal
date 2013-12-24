@@ -1,3 +1,26 @@
 // Place all the styles related to the entry controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+div.entry{
+  margin: 20px 0;
+  border-bottom:1px solid #E3E3E3
+}
+
+span.category{
+  margin-top:30px;
+  display:block;
+  font-size: 14px;
+  color: #F78400
+}
+
+span.created{
+  display:block;
+  margin: 20px 0;
+  font-size:12px
+}
+
+div.actions{
+  margin: 0 0 10px 0
+}

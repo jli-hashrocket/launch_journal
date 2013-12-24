@@ -2,22 +2,19 @@
 <%= link_to 'New Journal Entry', new_entry_path %> |
 <%= link_to 'New Category', new_category_path %>
 
-<br>
-<% @entries.each do |entry| %>
-  <span class="title"><%= entry.title %></span><br/>
-  <%= entry.content %>
-  <br>
-  Created at: <%= entry.created_at.strftime("%B %e, %Y") %>
-  <br>
-  Categories:
-  <% entry.categories.each do |category| %>
-    <%= category.name %>
+<div class="entry">
+  <% @entries.each do |entry| %>
+    <h3><%= entry.title %></h3><br/>
+      <%= entry.content %><br/>
+      <span class="category">Categories:
+        <% entry.categories.each do |category| %>
+          <%= category.name %>
+        <% end %>
+      </span>
+      <span class="created">Created at: <%= entry.created_at.strftime("%B %e, %Y") %></span>
+      <div class="actions">
+        <%= link_to 'Show', entry_path(entry) %> | <%= link_to 'Edit', edit_entry_path(entry) %> |
+        <%= link_to 'Destroy', entry_path(entry), method: :delete %>
+      </div>
   <% end %>
-  <br>
-  <%= link_to 'Show', entry_path(entry) %> | <%= link_to 'Edit', edit_entry_path(entry) %> |
-  <%= link_to 'Destroy', entry_path(entry), method: :delete %>
-  <br>
-  <br>
-<% end %>
-
-
+</div>
