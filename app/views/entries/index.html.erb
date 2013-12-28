@@ -4,7 +4,7 @@
 
 <% @entries.each do |entry| %>
   <div class="entry">
-    <h3><%= entry.title %></h3><br/>
+    <h3><%= entry.title %></h3>
       <%= entry.content %><br/>
       <span class="category">Categories:
         <% entry.categories.each do |category| %>
@@ -18,3 +18,11 @@
       </div>
   </div>
 <% end %>
+<div class="all_categories">
+  <h3>All Categories</h>
+  <ul>
+    <% @categories.each do |category| %>
+      <li><%= category.name %></li>
+    <% end %>
+  </ul
+</div>

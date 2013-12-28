@@ -1,6 +1,7 @@
 class EntriesController < ApplicationController
   def index
     @entries = Entry.all
+    @categories = Category.all
   end
 
   def new
